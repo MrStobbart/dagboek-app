@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/dagboek/static/css/main.073c9b0a.css",
+    "main.js": "/dagboek/static/js/main.7779b504.js",
+    "static/js/787.6ff815ab.chunk.js": "/dagboek/static/js/787.6ff815ab.chunk.js",
+    "static/media/logo.svg": "/dagboek/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/dagboek/index.html",
+    "main.073c9b0a.css.map": "/dagboek/static/css/main.073c9b0a.css.map",
+    "main.7779b504.js.map": "/dagboek/static/js/main.7779b504.js.map",
+    "787.6ff815ab.chunk.js.map": "/dagboek/static/js/787.6ff815ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.7779b504.js"
+  ]
+}
