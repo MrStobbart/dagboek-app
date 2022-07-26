@@ -1,25 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
+import EditEntry from "./EditEntry";
+import Entries from "./Entries";
+import Navigation, { Page } from "./Navigation";
 
 function App() {
+  const [activePage, setActivePage] = useState<Page>("today");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>A dagboek app</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation activePage={activePage} setActivePage={setActivePage} />
+      {activePage === "today" && <EditEntry />}
+      {activePage === "all-days" && <Entries />}
     </div>
   );
 }
