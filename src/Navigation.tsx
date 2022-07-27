@@ -1,12 +1,6 @@
-import { Menu } from "antd";
-import { ItemType } from "antd/lib/menu/hooks/useItems";
+import { Button, Space } from "antd";
 
 export type Page = "today" | "all-days";
-
-const items: ItemType[] = [
-  { label: "Today", key: "today" },
-  { label: "All days", key: "all-days" },
-];
 
 export type NavigationProps = {
   activePage: Page;
@@ -18,13 +12,23 @@ export default function Navigation({
   setActivePage,
 }: NavigationProps) {
   return (
-    <Menu
-      mode="horizontal"
-      defaultSelectedKeys={[activePage]}
-      items={items}
-      onSelect={({ key }) => {
-        setActivePage(key as Page);
-      }}
-    />
+    <Space>
+      <Button
+        type={activePage === "today" ? "primary" : "default"}
+        onClick={() => {
+          setActivePage("today");
+        }}
+      >
+        Today
+      </Button>
+      <Button
+        type={activePage === "all-days" ? "primary" : "default"}
+        onClick={() => {
+          setActivePage("all-days");
+        }}
+      >
+        All days
+      </Button>
+    </Space>
   );
 }

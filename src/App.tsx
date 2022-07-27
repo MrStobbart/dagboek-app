@@ -1,3 +1,5 @@
+import { Layout } from "antd";
+import { Content, Header } from "antd/lib/layout/layout";
 import { useState } from "react";
 import "./App.css";
 import EditEntry from "./EditEntry";
@@ -7,12 +9,18 @@ import Navigation, { Page } from "./Navigation";
 function App() {
   const [activePage, setActivePage] = useState<Page>("today");
 
+  console.log("re-render");
+
   return (
-    <div className="App">
-      <Navigation activePage={activePage} setActivePage={setActivePage} />
-      {activePage === "today" && <EditEntry />}
-      {activePage === "all-days" && <Entries />}
-    </div>
+    <Layout>
+      <Header>
+        <Navigation activePage={activePage} setActivePage={setActivePage} />
+      </Header>
+      <Content>
+        {activePage === "today" && <EditEntry />}
+        {activePage === "all-days" && <Entries />}
+      </Content>
+    </Layout>
   );
 }
 
